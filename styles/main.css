@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
+:root {
+    --color-primary: #fff; 
+    --color-secondary: #000; 
+    --color-accent: #0d7377; 
+}
+
 * {
     font-family: 'Google Sans', sans-serif;
 }
@@ -11,10 +17,23 @@ body {
 
 body > header {
     display: flex; 
-    justify-content: end; 
+    justify-content: space-between; 
     width: 100%;
 
-    position: fixed; 
+    position: sticky; 
+    top: 0;
+}
+
+body > header > a {
+    padding: 2em; 
+    font-size: 1.25em; 
+    text-decoration: none; 
+    color: var(--color-primary); 
+    text-transform: uppercase; 
+
+    &:hover {
+        color: var(--color-accent)
+    }
 }
 
 body > header ul {
@@ -29,18 +48,59 @@ body > header ul {
 }
 
 body > header ul li a {
-    color: #000; 
+    color: var(--color-primary); 
     text-decoration: none;
     text-transform: uppercase;
 
     font-size: 1.25em; 
+
+    &:hover {
+        color: var(--color-accent)
+    }
+}
+
+/* Home */ 
+body:has(#home) {
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+#home {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    gap: 1em; 
+
+    height: 100%; 
+
+    color: var(--color-primary); 
+}
+
+#home h1 {
+    margin: 0; 
+    font-size: 8em;
+
+    display: inline-block; 
+
+    background: linear-gradient(160deg, #b2e8e4 0%, #7ecac3 55%, #f5c842 100%);
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#home h2 {
+    margin: 0; 
+
+    font-weight: 200;
 }
 
 /* Projecten */ 
 #projecten {
     display: flex; 
     flex-direction: column;
-    gap: 8em; 
+    gap: 20vh; 
     
     max-width: 60vw; 
     margin: 0 auto;
@@ -72,10 +132,14 @@ body > header ul li a {
 #projecten > div > div h2 {
     margin: 0; 
     font-size: 2em;
+
+    color: var(--color-primary); 
 }
 
 #projecten > div > div p {
     margin: 0; 
+
+    color: var(--color-primary); 
 }
 
 /* Project numbers */ 
@@ -88,15 +152,15 @@ body > header ul li a {
 }
 
 #projecten > div > div > div span {
-    color: #096C9A; 
+    color: var(--color-accent); 
     text-wrap: nowrap;
 }
 
 #projecten > div > div > div div {
     width: 100%; 
     height: 1px; 
-    background-color: black;
-    opacity: 0.3;
+    background-color: var(--color-primary);
+    opacity: 0.5;
 }
 
 #projecten > div > img {
@@ -117,13 +181,13 @@ body > header ul li a {
 }
 
 #projecten > div > div > div a:first-of-type {
-    border: 2px solid #1d1d1d; 
-    color: #1d1d1d; 
+    border: 2px solid #fff; 
+    color: #fff; 
 }
 
 #projecten > div > div > div a:last-of-type {
-    background-color: #096C9A; 
-    border: 2px solid #096C9A; 
+    background-color: var(--color-accent); 
+    border: 2px solid var(--color-accent); 
     color: white;
 }
 
@@ -171,5 +235,133 @@ body > header ul li a {
 
 /* Footer */ 
 footer {
-    height: 2em; 
+    height: auto; 
+    padding: 2em; 
+
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #050e1a; 
+
+    margin-top: 4em; 
+}
+
+footer p {
+    font-size: 1.125em; 
+    color: var(--color-primary); 
+    opacity: 0.5;
+}
+
+/* Hackathon */ 
+#hackathon {
+    max-width: 60vw; 
+    margin: 0 auto;
+}
+
+/* Weekly nerd */
+#weekly_nerd {
+    max-width: 60vw; 
+    margin: 0 auto;
+
+    display: flex; 
+    flex-direction: column; 
+    gap: 15vh; 
+
+    color: var(--color-primary); 
+}
+
+#weekly_nerd > div {
+    width: 60%; 
+
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.5em
+}
+
+#weekly_nerd > div > div {
+    display: flex; 
+    flex-direction: row; 
+    align-items: center;
+    gap: 1em; 
+}
+
+#weekly_nerd > div > div:has(ul) {
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.2em; 
+    align-items: start;
+}
+
+#weekly_nerd > div > div:has(ul) p {
+    margin-bottom: 0; 
+}
+
+#weekly_nerd > div > div h2 {
+    text-wrap: nowrap; 
+    font-size: 2em; 
+    margin: 0; 
+
+    color: var(--color-accent); 
+}
+
+#weekly_nerd > div > div div {
+    background-color: var(--color-primary); 
+    opacity: 0.5; 
+    width: 100%; 
+    height: 2px; 
+}
+
+#weekly_nerd > div span {
+    color: var(--color-accent); 
+    font-size: 1.25em; 
+    width: 100%; 
+}
+
+/* Reflectie */ 
+#reflectie {
+    max-width: 60vw; 
+    margin: 0 auto;
+
+    min-height: 100vh; 
+
+    color: var(--color-primary); 
+
+    display: flex; 
+    flex-direction: column; 
+    gap: 2em; 
+}
+
+#reflectie > div h2 {
+    font-size: 2em;
+    color: var(--color-accent); 
+}
+
+#reflectie > div > p {
+    font-size: 1.125em; 
+}
+
+#reflectie > div ul {
+    display: flex; 
+    flex-direction: row; 
+
+    list-style: none; 
+    padding: 0; 
+
+    justify-content: space-between;
+    gap: 1em
+}
+
+#reflectie > div ul li {
+    background-color: #05101E; 
+    border-radius: 1em; 
+    border: 1px solid rgba(13, 115, 119, 0.25);
+    flex: 1; 
+    padding: 1em;
+
+    font-size: 1.125em; 
+
+    &:hover {
+        border: 1px solid rgba(13, 115, 119, 1);
+    }
 }

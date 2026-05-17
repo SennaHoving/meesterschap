@@ -1,0 +1,18 @@
+body {
+    background: linear-gradient(to bottom, #050e1a, #0a2540, #081525);
+}
+
+.bubble {
+    position: fixed;
+    bottom: -40px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, rgba(178,232,228,.4), rgba(13,115,119,.05));
+    border: 1px solid rgba(126,202,195,.3);
+    animation: rise linear infinite;
+}
+
+@keyframes rise {
+    0%   { transform: translateY(0) translateX(0);    opacity: .6; }
+    50%  { transform: translateY(-45vh) translateX(18px); opacity: .4; }
+    100% { transform: translateY(-110vh) translateX(-10px); opacity: 0; }
+}
